@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: BottomAppBar(
         child: ElevatedButton(
-          child: Text("Logouttt"),
+          child: Text("Logout"),
           onPressed: () {
             FirebaseAuth.instance.signOut().then((value) {
               print("Signed Out");
