@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "606666353150",
+    "project_id": "maarad-project-cf681",
+    "storage_bucket": "maarad-project-cf681.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606666353150:android:b4b154c0a3441ae523b8af",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606666353150-n975r155hhn830rsicd4pmtav358qaco.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ecommerce",
+            "certificate_hash": "b3f498a4d7b58e3c3fba2d9c6da3729b035f2cb4"
+          }
+        },
+        {
+          "client_id": "606666353150-cg3o7vlhtnas7ilepobtj6o8etufbf63.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCZ7Okage0xLOQrd-MpWd69ck-fOLscrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606666353150-cg3o7vlhtnas7ilepobtj6o8etufbf63.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
