@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/showRoom.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -37,7 +38,10 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.garage),
             title: Text('Expo\'s car'),
-            onTap: () => print('Expo'),
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ShowRoom()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.car_rental),
