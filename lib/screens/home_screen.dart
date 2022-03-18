@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:ecommerce/screens/NavBar.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:ecommerce/screens/signup_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -15,18 +16,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BottomAppBar(
-        child: ElevatedButton(
-          child: Text("Logout"),
-          onPressed: () {
-            FirebaseAuth.instance.signOut().then((value) {
-              print("Signed Out");
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SignInScreen()));
-            });
-          },
-        ),
-      ),
+      drawer: NavBar(),
+      appBar: AppBar(title: Text('Home')),
+      body: Center(),
     );
   }
 }
