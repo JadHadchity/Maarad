@@ -17,7 +17,7 @@ class _ShowRoomScreenState extends State<ShowRoom> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavBar(),
-      appBar: AppBar(title: Text('Show Room')),
+      appBar: AppBar(title: Text('Show Roomm')),
       body: Center(),
     );
   }
