@@ -1,6 +1,6 @@
 import 'package:ecommerce/Utils/color_utils.dart';
 import 'package:ecommerce/reusable_widgets/reusable_widget.dart';
-import 'package:ecommerce/screens/home_screen.dart';
+import 'package:ecommerce/bottomNavBar/bottomNavBar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -66,8 +66,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           password: _passwordTextController.text)
                       .then((value) {
                     print("Created new account");
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => BottomNavBar()));
                   }).onError((error, stackTrace) {
                     print("Error ${error.toString()}");
                   });
