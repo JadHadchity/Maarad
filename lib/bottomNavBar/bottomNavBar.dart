@@ -1,7 +1,9 @@
 import 'package:ecommerce/Utils/constant.dart';
+import 'package:ecommerce/screens/Account.dart';
 import 'package:ecommerce/screens/category.dart';
 import 'package:ecommerce/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommerce/bottomNavBar/bottomNavBar.dart';
 import 'package:ecommerce/screens/category.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -16,6 +18,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List<Widget> _children = [
     HomeScreen(),
     category(),
+    Account(),
   ];
 
   void onTapTapped(int index) {

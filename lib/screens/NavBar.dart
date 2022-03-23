@@ -1,3 +1,4 @@
+import 'package:ecommerce/bottomNavBar/bottomNavBar.dart';
 import 'package:ecommerce/screens/CarParts.dart';
 import 'package:ecommerce/screens/showRoom.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
@@ -29,7 +30,10 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.home),
             title: Text('Home'),
-            onTap: () => print('Home'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => BottomNavBar()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.favorite),
