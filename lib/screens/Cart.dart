@@ -1,3 +1,4 @@
+import 'package:ecommerce/defaultAppBar.dart';
 import 'package:ecommerce/screens/NavBar.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class _CartScreenState extends State<Cart> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavBar(),
-      appBar: AppBar(title: Text('Cart')),
+      appBar: DefaultAppBar(title: ('Cart')),
       body: Center(),
     );
   }

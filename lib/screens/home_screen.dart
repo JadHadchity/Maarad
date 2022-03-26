@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:ecommerce/defaultAppBar.dart';
 import 'package:ecommerce/screens/NavBar.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:ecommerce/screens/signup_screen.dart';
@@ -18,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavBar(),
-      appBar: AppBar(title: Text('Home')),
+      appBar: DefaultAppBar(title: ('Home')),
       body: Center(),
     );
   }
