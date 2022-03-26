@@ -1,5 +1,6 @@
 import 'package:ecommerce/Utils/constant.dart';
-import 'package:ecommerce/screens/Account.dart';
+import 'package:ecommerce/screens/CarParts.dart';
+import 'package:ecommerce/screens/Cart.dart';
 import 'package:ecommerce/screens/category.dart';
 import 'package:ecommerce/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List<Widget> _children = [
     HomeScreen(),
     category(),
-    Account(),
+    Cart(),
   ];
 
   void onTapTapped(int index) {
@@ -35,6 +36,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
         onTap: onTapTapped,
         currentIndex: _currentIndex,
         elevation: kLess,
+        selectedItemColor: kPrimaryColor,
+        unselectedItemColor: kLightColor,
         showSelectedLabels: true,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
@@ -48,8 +51,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
             icon: Icon(Icons.category),
           ),
           BottomNavigationBarItem(
-            label: 'Setting',
-            icon: Icon(Icons.settings),
+            label: 'Cart',
+            icon: Icon(Icons.shopping_cart),
           ),
         ],
       ),
