@@ -2,10 +2,10 @@ import 'package:ecommerce/screens/home_screen.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:ecommerce/screens/signup_screen.dart';
 import 'screens/CarParts.dart';
-import 'package:ecommerce/splash.dart';
+import 'package:ecommerce/screens/splash/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'splash.dart';
+
 import 'Models/Parts.dart';
 
 void main() async {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splash(),
+      home: SplashScreen(),
     );
   }
 }

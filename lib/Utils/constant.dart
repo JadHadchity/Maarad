@@ -14,6 +14,7 @@ const kLessPadding = 10.0;
 const kPrimaryColor = Color(0xFFFF8084);
 const kRadius = 4.0;
 const kLightColor = Color(0xFF808080);
+const kAnimationDuration = Duration(milliseconds: 200);
 
 final categoryList = [
   CategoryModal(image: "assets/images/mercedes.jpg", discount: 10),
