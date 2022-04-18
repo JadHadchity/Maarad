@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce/bottomNavBar/bottomNavBar.dart';
 
 class HomeScreen extends StatefulWidget {
+  static String routeName = "/home";
   const HomeScreen({Key? key}) : super(key: key);
 
   @override

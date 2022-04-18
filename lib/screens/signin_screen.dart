@@ -2,6 +2,7 @@ import 'package:ecommerce/Utils/color_utils.dart';
 import 'package:ecommerce/bottomNavBar/bottomNavBar.dart';
 import 'package:ecommerce/reusable_widgets/reusable_widget.dart';
 import 'package:ecommerce/bottomNavBar/bottomNavBar.dart';
+import 'package:ecommerce/screens/login_success/login_success_screen.dart';
 import 'package:ecommerce/screens/signup_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -57,8 +58,10 @@ class _SignInScreenState extends State<SignInScreen> {
                         email: _emailTextController.text,
                         password: _passwordTextController.text)
                     .then((value) {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => BottomNavBar()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LoginSuccessScreen()));
                 }).onError((error, stackTrace) {
                   print("Error ${error.toString()}");
                 });
