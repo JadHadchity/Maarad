@@ -1,10 +1,12 @@
 import 'package:ecommerce/Models/Parts.dart';
+import 'package:ecommerce/enums.dart';
 import 'package:ecommerce/screens/NavBar.dart';
 import 'package:ecommerce/screens/CarParts.dart';
 import 'package:ecommerce/screens/ShowRoom.dart';
 import 'package:ecommerce/screens/hondaParts.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:ecommerce/screens/signup_screen.dart';
+import 'package:ecommerce/components/coustom_bottom_nav_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/Models/parts.dart' as parts;
@@ -23,6 +25,7 @@ class _CarPartsScreenState extends State<CarParts> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavBar(),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
       appBar: AppBar(title: Text('Car Parts')),
       body: ListView.builder(
           itemCount: partList.length,

@@ -1,6 +1,7 @@
 import 'package:ecommerce/Utils/color_utils.dart';
 import 'package:ecommerce/reusable_widgets/reusable_widget.dart';
-import 'package:ecommerce/bottomNavBar/bottomNavBar.dart';
+import 'package:ecommerce/screens/login_success/login_success_screen.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -32,9 +33,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
-            hexStringToColor("CB2B93"),
-            hexStringToColor("9546C4"),
-            hexStringToColor("5E61F4")
+            hexStringToColor("FFFF8084"),
+            hexStringToColor("FFFF8084"),
+            hexStringToColor("FFFF8084")
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
           child: SingleChildScrollView(
               child: Padding(
@@ -69,7 +70,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => BottomNavBar()));
+                            builder: (context) => LoginSuccessScreen()));
                   }).onError((error, stackTrace) {
                     print("Error ${error.toString()}");
                   });

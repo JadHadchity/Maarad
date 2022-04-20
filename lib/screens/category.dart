@@ -1,6 +1,6 @@
 import 'package:ecommerce/Utils/constant.dart';
 import 'package:ecommerce/Widget/categoryItems.dart';
-import 'package:ecommerce/bottomNavBar/bottomNavBar.dart';
+
 import 'package:ecommerce/defaultAppBar.dart';
 import 'package:ecommerce/screens/NavBar.dart';
 import 'package:ecommerce/screens/categoryView.dart';

@@ -20,8 +20,16 @@ class Parts {
 
 List<Parts> partList = [
   Parts(
-      title: 'Honda',
-      description: 'hellooo',
+      title: 'Testing',
+      description: 'hello',
+      year: 2000,
+      imageUrl:
+          'https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg',
+      imageUrll:
+          'https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg'),
+  Parts(
+      title: 'Test',
+      description: 'hello',
       year: 2000,
       imageUrl:
           'https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg',
@@ -36,7 +44,7 @@ List<Parts> partList = [
       imageUrll:
           'https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg'),
   Parts(
-      title: 'falefel',
+      title: 'Test',
       description: 'hellooo',
       year: 2000,
       imageUrl:
@@ -44,24 +52,16 @@ List<Parts> partList = [
       imageUrll:
           'https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg'),
   Parts(
-      title: 'falefel',
-      description: 'hellooo',
+      title: 'Test',
+      description: 'hello',
       year: 2000,
       imageUrl:
           'https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg',
       imageUrll:
           'https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg'),
   Parts(
-      title: 'falefel',
-      description: 'hellooo',
-      year: 2000,
-      imageUrl:
-          'https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg',
-      imageUrll:
-          'https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg'),
-  Parts(
-      title: 'falefel',
-      description: 'hellooo',
+      title: 'Test',
+      description: 'Ok',
       year: 2000,
       imageUrl:
           'https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg',

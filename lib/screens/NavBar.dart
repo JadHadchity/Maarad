@@ -1,5 +1,5 @@
-import 'package:ecommerce/bottomNavBar/bottomNavBar.dart';
 import 'package:ecommerce/screens/CarParts.dart';
+import 'package:ecommerce/screens/home/home_screen.dart';
 import 'package:ecommerce/screens/showRoom.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class NavBar extends StatelessWidget {
             title: Text('Home'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => BottomNavBar()));
+                  MaterialPageRoute(builder: (context) => HomeScreen()));
             },
           ),
           ListTile(

@@ -1,4 +1,4 @@
-import 'package:ecommerce/screens/home_screen.dart';
+import 'package:ecommerce/screens/home/home_screen.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:ecommerce/screens/signup_screen.dart';
 import 'screens/CarParts.dart';

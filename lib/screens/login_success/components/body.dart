@@ -1,7 +1,6 @@
-import 'package:ecommerce/bottomNavBar/bottomNavBar.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/components/default_button.dart';
-import 'package:ecommerce/screens/home_screen.dart';
+import 'package:ecommerce/screens/home/home_screen.dart';
 import 'package:ecommerce/size_config.dart';
 
 class Body extends StatelessWidget {
@@ -30,7 +29,7 @@ class Body extends StatelessWidget {
             text: "Back to home",
             press: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => BottomNavBar()));
+                  MaterialPageRoute(builder: (context) => HomeScreen()));
             },
           ),
         ),
