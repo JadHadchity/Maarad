@@ -11,13 +11,13 @@ class NavBar extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          UserAccountsDrawerHeader(
-            accountName: Text('User'),
-            accountEmail: Text('gmail.com'),
-            currentAccountPicture: CircleAvatar(
-              child: ClipOval(),
+          const UserAccountsDrawerHeader(
+            accountName: const Text('User'),
+            accountEmail: const Text('gmail.com'),
+            currentAccountPicture: const CircleAvatar(
+              child: const ClipOval(),
             ),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.blue,
               image: DecorationImage(
                 image: NetworkImage(
@@ -28,40 +28,42 @@ class NavBar extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Home'),
+            leading: const Icon(Icons.home),
+            title: const Text('Home'),
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => HomeScreen()));
             },
           ),
           ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text('Favorites'),
+            leading: const Icon(Icons.favorite),
+            title: const Text('Favorites'),
             onTap: () => print('Favorite'),
           ),
           ListTile(
-            leading: Icon(Icons.garage),
-            title: Text('Expo\'s car'),
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => ShowRoom()));
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.car_rental),
-            title: Text('Car Parts'),
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => CarParts()));
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.exit_to_app_outlined),
-            title: Text('Logout'),
+            leading: const Icon(Icons.garage),
+            title: const Text('Expo\'s car'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SignInScreen()));
+                  MaterialPageRoute(builder: (context) => const ShowRoom()));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.car_rental),
+            title: const Text('Car Parts'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const CarParts()));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.exit_to_app_outlined),
+            title: const Text('Logout'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SignInScreen()));
             },
           ),
         ],
@@ -69,3 +71,5 @@ class NavBar extends StatelessWidget {
     );
   }
 }
+
+
