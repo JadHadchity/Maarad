@@ -42,7 +42,7 @@ class _SignInScreenState extends State<SignInScreen> {
               SizedBox(
                 height: 30,
               ),
-              reusableTextField("Enter Your Email", Icons.person_outline, false,
+              reusableTextField("Enter Email", Icons.person_outline, false,
                   _emailTextController),
               SizedBox(
                 height: 20,
