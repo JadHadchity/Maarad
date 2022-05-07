@@ -42,7 +42,7 @@ class _SignInScreenState extends State<SignInScreen> {
               SizedBox(
                 height: 30,
               ),
-              reusableTextField("Enter username", Icons.person_outline, false,
+              reusableTextField("Enter Your Email", Icons.person_outline, false,
                   _emailTextController),
               SizedBox(
                 height: 20,
@@ -58,10 +58,8 @@ class _SignInScreenState extends State<SignInScreen> {
                         email: _emailTextController.text,
                         password: _passwordTextController.text)
                     .then((value) {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => LoginSuccessScreen()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
                 }).onError((error, stackTrace) {
                   print("Error ${error.toString()}");
                 });

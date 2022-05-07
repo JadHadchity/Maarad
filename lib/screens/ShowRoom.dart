@@ -3,6 +3,7 @@ import 'package:ecommerce/Utils/constant.dart';
 import 'package:ecommerce/enums.dart';
 import 'package:ecommerce/main.dart';
 import 'package:ecommerce/screens/CarParts.dart';
+import 'package:ecommerce/screens/Expos/motorexpo.dart';
 import 'package:ecommerce/screens/NavBar.dart';
 import 'package:ecommerce/screens/home/home_screen.dart';
 import 'package:ecommerce/screens/profile/profile_screen.dart';
@@ -75,18 +76,18 @@ class _BodyWidgetState extends State<BodyWidget> {
             trailing: const Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const CarParts()));
+                  MaterialPageRoute(builder: (context) => const MotorExpo()));
             },
           ),
         ),
         Container(
           child: ListTile(
             leading: const CircleAvatar(
-              backgroundImage: AssetImage('assets/images/motorexpo.jpg'),
+              backgroundImage: AssetImage('assets/images/rkeinmotors.jpg'),
               radius: 25,
             ),
             title: const Text(
-              'Motor expoo',
+              'Rkein Motors',
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             subtitle: const Text('Amazing'),
