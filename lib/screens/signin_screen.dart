@@ -38,7 +38,7 @@ class _SignInScreenState extends State<SignInScreen> {
               20, MediaQuery.of(context).size.height * 0.2, 20, 0),
           child: Column(
             children: <Widget>[
-              logoWidget("assets/images/logoicon.png"),
+              logoWidget("assets/images/splash_1.png"),
               SizedBox(
                 height: 30,
               ),
