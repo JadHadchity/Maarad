@@ -3,7 +3,9 @@ import 'package:ecommerce/Utils/constant.dart';
 import 'package:ecommerce/enums.dart';
 import 'package:ecommerce/main.dart';
 import 'package:ecommerce/screens/CarParts.dart';
+import 'package:ecommerce/screens/Expos/elegantmotor.dart';
 import 'package:ecommerce/screens/Expos/motorexpo.dart';
+import 'package:ecommerce/screens/Expos/rkeinmotor.dart';
 import 'package:ecommerce/screens/NavBar.dart';
 import 'package:ecommerce/screens/home/home_screen.dart';
 import 'package:ecommerce/screens/profile/profile_screen.dart';
@@ -94,7 +96,7 @@ class _BodyWidgetState extends State<BodyWidget> {
             trailing: const Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const CarParts()));
+                  MaterialPageRoute(builder: (context) => const RkeinMotor()));
             },
           ),
         ),
@@ -111,8 +113,10 @@ class _BodyWidgetState extends State<BodyWidget> {
             subtitle: const Text('Hankash Street, Beirut'),
             trailing: const Icon(Icons.keyboard_arrow_right),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const CarParts()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ElegantMotor()));
             },
           ),
         ),
