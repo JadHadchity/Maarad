@@ -72,7 +72,7 @@ class _BodyWidgetState extends State<BodyWidget> {
               'Motor expo',
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            subtitle: const Text('Amazing'),
+            subtitle: const Text('Kaslik, Jounieh'),
             trailing: const Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.push(context,
@@ -90,7 +90,25 @@ class _BodyWidgetState extends State<BodyWidget> {
               'Rkein Motors',
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            subtitle: const Text('Amazing'),
+            subtitle: const Text('Mkalles Round, Beirut'),
+            trailing: const Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const CarParts()));
+            },
+          ),
+        ),
+        Container(
+          child: ListTile(
+            leading: const CircleAvatar(
+              backgroundImage: AssetImage('assets/images/elegantmotor.jpg'),
+              radius: 25,
+            ),
+            title: const Text(
+              'Elegant Motors',
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            subtitle: const Text('Hankash Street, Beirut'),
             trailing: const Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.push(context,
