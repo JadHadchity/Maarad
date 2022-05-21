@@ -37,7 +37,7 @@ class MotorExpo extends StatelessWidget {
       body: GetBuilder<DataController>(
         builder: (controller) => controller.loginUserData.isEmpty
             ? Center(
-                child: Text('😔 NO DATA FOUND PLEASE ADD DATA 😔'),
+                child: Text('Loading Cars...'),
               )
             : ListView.builder(
                 itemCount: controller.loginUserData.length,
