@@ -78,7 +78,7 @@ class _BodyWidgetState extends State<BodyWidget> {
             trailing: const Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const MotorExpo()));
+                  MaterialPageRoute(builder: (context) => MotorExpo()));
             },
           ),
         ),
