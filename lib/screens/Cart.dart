@@ -1,5 +1,5 @@
 import 'package:ecommerce/defaultAppBar.dart';
-import 'package:ecommerce/screens/NavBar.dart';
+import 'package:ecommerce/screens/drawer_screen.dart';
 import 'package:flutter/material.dart';
 
 class Cart extends StatefulWidget {
@@ -13,7 +13,7 @@ class _CartScreenState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavBar(),
+      drawer: AppDrawer(),
       appBar: DefaultAppBar(title: ('Cart')),
       body: Center(),
     );

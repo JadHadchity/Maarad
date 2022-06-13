@@ -2,7 +2,7 @@ import 'package:ecommerce/Utils/constant.dart';
 import 'package:ecommerce/Widget/categoryItems.dart';
 
 import 'package:ecommerce/defaultAppBar.dart';
-import 'package:ecommerce/screens/NavBar.dart';
+import 'package:ecommerce/screens/drawer_screen.dart';
 import 'package:ecommerce/screens/categoryView.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class _categoryState extends State<category> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhiteColor,
-      drawer: NavBar(),
+      drawer: AppDrawer(),
       appBar: DefaultAppBar(
         title: 'Category',
       ),

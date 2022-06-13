@@ -9,7 +9,7 @@ class ProductImagePicker extends StatefulWidget {
   ProductImagePicker(this.getImageValue);
 
   @override
-  State<ProductImagePicker> createState() => _ProductImagePickerState();
+  _ProductImagePickerState createState() => _ProductImagePickerState();
 }
 
 class _ProductImagePickerState extends State<ProductImagePicker> {
@@ -49,7 +49,7 @@ class _ProductImagePickerState extends State<ProductImagePicker> {
                   ),
                   ElevatedButton.icon(
                     onPressed: () {
-                      print('gallery');
+                      print('Gallery');
                       pickImage(ImageSource.gallery);
                     },
                     icon: Icon(Icons.image),
@@ -105,8 +105,8 @@ class _ProductImagePickerState extends State<ProductImagePicker> {
                   pickedImage!,
                   fit: BoxFit.cover,
                 )
-              : Image.asset(
-                  'assets/images/addphoto.png',
+              : Image.network(
+                  'https://static.thenounproject.com/png/2413564-200.png',
                   fit: BoxFit.cover,
                 ),
         ),

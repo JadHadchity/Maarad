@@ -1,126 +1,90 @@
-import 'dart:io';
+import 'package:ecommerce/Controllers/data_controller.dart';
 import 'package:ecommerce/Utils/constant.dart';
 import 'package:ecommerce/enums.dart';
-import 'package:ecommerce/main.dart';
-import 'package:ecommerce/screens/CarParts.dart';
-import 'package:ecommerce/screens/Expos/elegantmotor.dart';
-import 'package:ecommerce/screens/Expos/motorexpo.dart';
-import 'package:ecommerce/screens/Expos/rkeinmotor.dart';
-import 'package:ecommerce/screens/NavBar.dart';
-import 'package:ecommerce/screens/home/home_screen.dart';
-import 'package:ecommerce/screens/profile/profile_screen.dart';
-import 'package:ecommerce/screens/signin_screen.dart';
-import 'package:ecommerce/screens/signup_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
+import 'package:ecommerce/screens/addproduct_screen.dart';
+import 'package:ecommerce/screens/drawer_screen.dart';
+
 import 'package:ecommerce/components/coustom_bottom_nav_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class ShowRoom extends StatefulWidget {
-  const ShowRoom({Key? key}) : super(key: key);
-
-  @override
-  _ShowRoomScreenState createState() => _ShowRoomScreenState();
-}
-
-class _ShowRoomScreenState extends State<ShowRoom> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'ListTile Demo',
-      debugShowCheckedModeBanner: false,
-      home: ListTileWidget(),
-    );
-  }
-}
-
-class ListTileWidget extends StatelessWidget {
+class ShowRoom extends StatelessWidget {
+  final DataController controller = Get.put(DataController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavBar(),
+      drawer: AppDrawer(),
       appBar: AppBar(
-        title: Text('Show Room'),
-        backgroundColor: kPrimaryColor,
+        centerTitle: true,
+        title: Text('All Product List'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Get.to(() => AddProductScreen());
+              },
+              icon: Icon(Icons.add))
+        ],
       ),
       bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
-      body: BodyWidget(),
-    );
-  }
-}
-
-class BodyWidget extends StatefulWidget {
-  const BodyWidget({Key? key}) : super(key: key);
-
-  @override
-  State<BodyWidget> createState() => _BodyWidgetState();
-}
-
-class _BodyWidgetState extends State<BodyWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          child: ListTile(
-            leading: const CircleAvatar(
-              backgroundImage: AssetImage('assets/images/motorexpo.jpg'),
-              radius: 25,
-            ),
-            title: const Text(
-              'Motor expo',
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            subtitle: const Text('Kaslik, Jounieh'),
-            trailing: const Icon(Icons.keyboard_arrow_right),
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MotorExpo()));
-            },
-          ),
-        ),
-        Container(
-          child: ListTile(
-            leading: const CircleAvatar(
-              backgroundImage: AssetImage('assets/images/rkeinmotors.jpg'),
-              radius: 25,
-            ),
-            title: const Text(
-              'Rkein Motors',
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            subtitle: const Text('Mkalles Round, Beirut'),
-            trailing: const Icon(Icons.keyboard_arrow_right),
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const RkeinMotor()));
-            },
-          ),
-        ),
-        Container(
-          child: ListTile(
-            leading: const CircleAvatar(
-              backgroundImage: AssetImage('assets/images/elegantmotor.jpg'),
-              radius: 25,
-            ),
-            title: const Text(
-              'Elegant Motors',
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            subtitle: const Text('Hankash Street, Beirut'),
-            trailing: const Icon(Icons.keyboard_arrow_right),
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const ElegantMotor()));
-            },
-          ),
-        ),
-      ],
+      body: GetBuilder<DataController>(
+        builder: (controller) => controller.allProduct.isEmpty
+            ? Center(
+                child: Text('😔 NO DATA FOUND (: 😔'),
+              )
+            : ListView.builder(
+                itemCount: controller.allProduct.length,
+                itemBuilder: (context, index) {
+                  return Card(
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 200,
+                          width: double.infinity,
+                          child: Image.network(
+                            controller.allProduct[index].productimage,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Text(
+                                "Product Name: ${controller.allProduct[index].productname}",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                'Price: ${controller.allProduct[index].productprice.toString()}',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: ElevatedButton(
+                                  onPressed: () => launch(
+                                      "tel:${controller.allProduct[index].phonenumber.toString()}"),
+                                  child: Text('CALL'),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+      ),
     );
   }
 }

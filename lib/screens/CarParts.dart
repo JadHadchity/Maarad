@@ -1,8 +1,9 @@
 import 'package:ecommerce/Utils/constant.dart';
 import 'package:ecommerce/enums.dart';
-import 'package:ecommerce/screens/NavBar.dart';
+import 'package:ecommerce/screens/drawer_screen.dart';
 
 import 'package:ecommerce/components/coustom_bottom_nav_bar.dart';
+import 'package:ecommerce/screens/drawer_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class _CarPartsScreenState extends State<CarParts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavBar(),
+      drawer: AppDrawer(),
       appBar: AppBar(
         title: Text('Car Parts'),
         backgroundColor: kPrimaryColor,

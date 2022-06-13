@@ -1,94 +1,119 @@
-import 'package:ecommerce/Utils/color_utils.dart';
-
-import 'package:ecommerce/reusable_widgets/reusable_widget.dart';
-import 'package:ecommerce/screens/home/home_screen.dart';
-import 'package:ecommerce/screens/login_success/login_success_screen.dart';
+import 'package:ecommerce/Controllers/auth_controller.dart';
+import 'package:ecommerce/Utils/constant.dart';
 import 'package:ecommerce/screens/signup_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce/screens/splash/components/body.dart';
+import 'package:get/get.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  LoginScreen({Key? key}) : super(key: key);
 
   @override
-  _SignInScreenState createState() => _SignInScreenState();
+  _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
-  TextEditingController _passwordTextController = TextEditingController();
-  TextEditingController _emailTextController = TextEditingController();
+class _LoginScreenState extends State<LoginScreen> {
+  final _formKey = GlobalKey<FormState>();
+  Map<String, String> userLoginData = {"email": "", "password": ""};
+
+  AuthController controller = Get.put(AuthController());
+
+  login() {
+    if (_formKey.currentState!.validate()) {
+      print("Form is valid ");
+      _formKey.currentState!.save();
+      print('Data for login $userLoginData');
+      controller.login(userLoginData['email'], userLoginData['password']);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [
-          hexStringToColor("FFFF8084"),
-          hexStringToColor("FFFF8084"),
-          hexStringToColor("FFFF8084")
-        ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
-        child: SingleChildScrollView(
-            child: Padding(
-          padding: EdgeInsets.fromLTRB(
-              20, MediaQuery.of(context).size.height * 0.2, 20, 0),
-          child: Column(
-            children: <Widget>[
-              logoWidget("assets/images/splash_1.png"),
-              SizedBox(
-                height: 30,
-              ),
-              reusableTextField("Enter Email", Icons.person_outline, false,
-                  _emailTextController),
-              SizedBox(
-                height: 20,
-              ),
-              reusableTextField("Enter Password", Icons.lock_outline, true,
-                  _passwordTextController),
-              SizedBox(
-                height: 20,
-              ),
-              signInSignUpButton(context, true, () {
-                FirebaseAuth.instance
-                    .signInWithEmailAndPassword(
-                        email: _emailTextController.text,
-                        password: _passwordTextController.text)
-                    .then((value) {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()));
-                }).onError((error, stackTrace) {
-                  print("Error ${error.toString()}");
-                });
-              }),
-              signUpOtion()
-            ],
-          ),
-        )),
+      backgroundColor: kPrimaryColor,
+      appBar: AppBar(
+        backgroundColor: kPrimaryColor,
+        centerTitle: true,
+        title: Text('Login Screen'),
       ),
-    );
-  }
-
-  Row signUpOtion() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text("Don't have an account?",
-            style: TextStyle(color: Colors.white70)),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SignUpScreen()));
-          },
-          child: const Text(
-            " Sign Up",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      body: Card(
+        child: Container(
+          padding: EdgeInsets.all(10),
+          child: Form(
+            key: _formKey,
+            child: Center(
+              child: ListView(
+                shrinkWrap: true,
+                children: [
+                  Container(
+                    width: 100,
+                    height: 100,
+                    child: Image.asset(
+                      'assets/images/splash_1.png',
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      labelText: 'Email',
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Email Required';
+                      }
+                      return null;
+                    },
+                    onSaved: (value) {
+                      userLoginData['email'] = value!;
+                    },
+                  ),
+                  TextFormField(
+                    cursorColor: kPrimaryColor,
+                    obscureText: true,
+                    decoration: InputDecoration(labelText: 'Password'),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Password Required';
+                      }
+                      return null;
+                    },
+                    onSaved: (value) {
+                      userLoginData['password'] = value!;
+                    },
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: login,
+                    child: Text('Login Now'),
+                  ),
+                  Container(
+                    alignment: Alignment.centerRight,
+                    margin: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.to(() => SignUpScreen());
+                      },
+                      child: Text(
+                        "Don't Have an Account ? Sign up",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: kPrimaryColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
-        )
-      ],
+        ),
+      ),
     );
   }
 }

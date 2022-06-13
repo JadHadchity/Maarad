@@ -15,7 +15,6 @@ class AddProductScreen extends StatefulWidget {
 class _AddProductScreenState extends State<AddProductScreen> {
   DataController controller = Get.find();
   var _userImageFile;
-
   final _formKey = GlobalKey<FormState>();
   Map<String, dynamic> productData = {
     "p_name": "",
@@ -26,7 +25,6 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
   void _pickedImage(File image) {
     _userImageFile = image;
-
     print("Image got $_userImageFile");
   }
 

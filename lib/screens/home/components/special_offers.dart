@@ -1,5 +1,6 @@
 import 'package:ecommerce/screens/CarParts.dart';
 import 'package:ecommerce/screens/ShowRoom.dart';
+import 'package:ecommerce/screens/login_user_product_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ecommerce/size_config.dart';
@@ -29,8 +30,8 @@ class SpecialOffers extends StatelessWidget {
             children: [
               SpecialOfferCard(
                 image: "assets/images/Image Banner 2.png",
-                category: "Expo's",
-                numOfBrands: 18,
+                category: "Car's",
+                numOfBrands: 21,
                 press: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => ShowRoom()));
@@ -38,11 +39,13 @@ class SpecialOffers extends StatelessWidget {
               ),
               SpecialOfferCard(
                 image: "assets/images/Image Banner 3.png",
-                category: "Car Parts & Equipments",
+                category: "Your Product",
                 numOfBrands: 24,
                 press: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CarParts()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LoginUserProductScreen()));
                 },
               ),
               SizedBox(width: getProportionateScreenWidth(20)),

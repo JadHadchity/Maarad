@@ -73,7 +73,7 @@ class _BodyState extends State<Body> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SignInScreen()));
+                                builder: (context) => LoginScreen()));
                       },
                     ),
                     Spacer(),

@@ -1,6 +1,6 @@
-import 'package:ecommerce/screens/Expos/motorexpo.dart';
 import 'package:ecommerce/screens/ShowRoom.dart';
 import 'package:ecommerce/screens/home/home_screen.dart';
+import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:ecommerce/screens/splash/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
       navigatorKey: Get.key,
