@@ -54,7 +54,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Add New Product'),
+        title: Text('Add New Cars'),
       ),
       body: Card(
         child: Container(

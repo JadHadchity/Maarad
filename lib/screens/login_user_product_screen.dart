@@ -59,7 +59,7 @@ class LoginUserProductScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: kPrimaryColor,
-          title: Text("My Product"),
+          title: Text("My Cars"),
         ),
         drawer: AppDrawer(),
         bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
