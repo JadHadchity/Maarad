@@ -20,7 +20,7 @@ class _BodyState extends State<Body> {
       "image": "assets/images/splash_1.png"
     },
     {
-      "text": "We help people conect with Car Expos \naround Lebanon",
+      "text": "We help people to buy and sell car \naround Lebanon",
       "image": "assets/images/splash_2.png"
     },
     {

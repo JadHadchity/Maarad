@@ -66,9 +66,14 @@ class AuthController extends GetxController {
 
       Get.off(() => ShowRoom());
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'user not found') {
+      CommanDialog.hideLoading();
+      if (e.code == 'user-not-found') {
+        CommanDialog.showErrorDialog(
+            description: "No user found for that email");
         print('no user found for that email');
-      } else if (e.code == 'wrong password') {
+      } else if (e.code == 'wrong-password') {
+        CommanDialog.showErrorDialog(
+            description: "Wrong password for that user");
         print('wrong password provided for that user');
       }
     }
