@@ -9,13 +9,17 @@ class ProfileScreen extends StatelessWidget {
   static String routeName = "/profile";
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Profile"),
-        backgroundColor: kPrimaryColor,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Profile"),
+          backgroundColor: kPrimaryColor,
+        ),
+        body: Body(),
+        bottomNavigationBar:
+            CustomBottomNavBar(selectedMenu: MenuState.profile),
       ),
-      body: Body(),
-      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.profile),
     );
   }
 }
