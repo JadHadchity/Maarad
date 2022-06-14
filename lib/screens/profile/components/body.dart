@@ -1,11 +1,14 @@
+import 'package:ecommerce/Controllers/auth_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
+import 'package:get/get.dart';
 
 import 'profile_menu.dart';
 import 'profile_pic.dart';
 
 class Body extends StatelessWidget {
+  final AuthController _auth = AuthController();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -37,7 +40,10 @@ class Body extends StatelessWidget {
           ProfileMenu(
             text: "Log Out",
             icon: "assets/icons/Log out.svg",
-            press: () {},
+            press: () async {
+              await _auth.signOut();
+              Get.offAll(() => LoginScreen());
+            },
           ),
         ],
       ),
