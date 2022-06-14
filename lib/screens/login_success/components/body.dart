@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/screens/home/home_screen.dart';
@@ -29,7 +30,7 @@ class Body extends StatelessWidget {
             text: "Back to home",
             press: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()));
+                  MaterialPageRoute(builder: (context) => LoginScreen()));
             },
           ),
         ),
