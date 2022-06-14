@@ -71,6 +71,7 @@ class AppDrawer extends StatelessWidget {
                   title: const Text('LogOut'),
                   onTap: () async {
                     await _auth.signOut();
+                    Get.off(() => LoginScreen());
                   }),
             ],
           ),
