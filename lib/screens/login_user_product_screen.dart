@@ -1,4 +1,5 @@
 import 'package:ecommerce/Controllers/data_controller.dart';
+import 'package:ecommerce/Utils/constant.dart';
 import 'package:ecommerce/components/coustom_bottom_nav_bar.dart';
 import 'package:ecommerce/screens/drawer_screen.dart';
 import 'package:flutter/material.dart';
@@ -55,6 +56,7 @@ class LoginUserProductScreen extends StatelessWidget {
     });
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: kPrimaryColor,
         title: Text("My Product"),
       ),
       drawer: AppDrawer(),
