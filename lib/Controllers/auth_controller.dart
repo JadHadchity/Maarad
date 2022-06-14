@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/Controllers/comman_dialog.dart';
 import 'package:ecommerce/screens/ShowRoom.dart';
 import 'package:ecommerce/screens/home/home_screen.dart';
+import 'package:ecommerce/screens/login_success/login_success_screen.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -31,7 +32,7 @@ class AuthController extends GetxController {
         });
         print("Firebase response1111 ${response.id}");
         CommanDialog.hideLoading();
-        Get.back();
+        Get.to(() => LoginSuccessScreen());
       } catch (exception) {
         CommanDialog.hideLoading();
         print("Error Saving Data at firestore $exception");
@@ -44,7 +45,7 @@ class AuthController extends GetxController {
         print('The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {
         CommanDialog.showErrorDialog(
-            description: "The accpunt already exist for that email");
+            description: "The account already exist for that email");
         print('The account already exists for that email.');
       }
     } catch (e) {
